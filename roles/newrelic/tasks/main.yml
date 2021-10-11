@@ -7,12 +7,15 @@
   ansible.builtin.apt_repository:
     repo: deb https://download.newrelic.com/infrastructure_agent/linux/apt hirsute main
     state: present
+    update_cache: yes
+
 
 
 - name: NewRelic | Add GPG key to the apt sources keyring
   ansible.builtin.apt_key:
     url: https://download.newrelic.com/infrastructure_agent/gpg/newrelic-infra.gpg
     state: present
+    update_cache: yes
 
 
 - name: NewRelic | Add license key in the config file
