@@ -2,8 +2,8 @@
 - name: NewRelic | Add license key in the config file
   ansible.builtin.lineinfile:
         path: /etc/newrelic-infra.yml
-        regexp: '^license_key: {{ newrelic_license_key }}'
-        line: 'license_key: {{ newrelic_license_key }}'
+        # regexp: '^license_key: {{ newrelic_license_key }}'
+        # line: 'license_key: {{ newrelic_license_key }}'
         state: present
 
 # - name: NewRelic | Add license key in the config file
