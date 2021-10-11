@@ -2,26 +2,23 @@
   apt:
     update_cache: yes
 
-- name: NewRelic | Add license key in the config file
-  ansible.builtin.shell: echo "license_key: ad7b45e406a60be7ad8a3c3705c8e98aee65NRAL" | sudo tee -a /etc/newrelic-infra.yml
+# - name: NewRelic | Add license key in the config file
+#   ansible.builtin.shell: echo "license_key: ad7b45e406a60be7ad8a3c3705c8e98aee65NRAL" | sudo tee -a /etc/newrelic-infra.yml
 
 
 
 - name: NewRelic | Add license key in the config file
   ansible.builtin.lineinfile:
         path: /etc/newrelic-infra.yml
-        # regexp: '^license_key: {{ newrelic_license_key }}'
+        regexp: '^license_key: {{ newrelic_license_key }}'
         line: 'license_key: {{ newrelic_license_key }}'
         state: present
-- name: NewRelic | Add license key in the config file
  
 
 - name: NewRelic | Add GPG key to the apt sources keyring
   ansible.builtin.apt_key:
     url: https://download.newrelic.com/infrastructure_agent/gpg/newrelic-infra.gpg
     state: present
-
-
 
 - name:  NewRelic repository into sources list
   ansible.builtin.apt_repository:
