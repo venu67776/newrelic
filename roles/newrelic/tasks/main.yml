@@ -3,7 +3,7 @@
     update_cache: yes
 
 - name: NewRelic | Add license key in the config file
-  ansible.builtin.shell: echo "license_key: ad7b45e406a60be7ad8a3c3705c8e98aee65NRAL" | sudo tee -a /etc/newrelic-infra.yml
+  ansible.builtin.shell:  echo "license_key=ad7b45e406a60be7ad8a3c3705c8e98aee65NRAL" | sudo tee -a /etc/newrelic-infra.yml
 
 
 # - name: NewRelic | Add license key in the config file
