@@ -1,6 +1,6 @@
 - hosts: all
   roles:
-    - name: newrelic.newrelic-infra
+    - name: nrinfragent
       vars:
         nrinfragent_os_name: ubuntu
         nrinfragent_os_version: 20.04
