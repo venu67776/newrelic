@@ -1,7 +1,7 @@
 
 
 - name: NewRelic | Add license key in the config file
-  ansible.builtin.lineinfile:
+  lineinfile:
         path: /etc/newrelic-infra.yml
         regexp: '^license_key: {{ newrelic_license_key }}'
         line: 'license_key: {{ newrelic_license_key }}'
@@ -9,12 +9,12 @@
  
 
 - name: NewRelic | Add GPG key to the apt sources keyring
-  ansible.builtin.apt_key:
+  apt_key:
     url: https://download.newrelic.com/infrastructure_agent/gpg/newrelic-infra.gpg
     state: present
 
 - name:  NewRelic repository into sources list
-  ansible.builtin.apt_repository:
+  apt_repository:
     repo: deb https://download.newrelic.com/infrastructure_agent/linux/apt focal main
     state: present
 
