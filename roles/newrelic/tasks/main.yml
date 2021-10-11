@@ -2,9 +2,9 @@
 #
 # ansible-playbook install-newrelic.yml -e newrelic_license_key=$NEWRELIC_LICENSE_KEY
 
-- name: Update apt-get repo and cache
-  apt: 
-    name: update_cache=yes
+# - name: Update apt-get repo and cache
+#   apt: 
+#     name: update_cache=yes
 
 
 - name:  NewRelic repository into sources list
