@@ -21,7 +21,7 @@
 
 - name:  NewRelic repository into sources list
   ansible.builtin.apt_repository:
-    repo: deb https://download.newrelic.com/infrastructure_agent/linux/apt hirsute main
+    repo: deb https://download.newrelic.com/infrastructure_agent/linux/apt focal main
     state: present
 
 
