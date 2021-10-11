@@ -1,16 +1,17 @@
 
-# - name: NewRelic | Add license key in the config file
-#   ansible.builtin.lineinfile:
-#         path: /etc/newrelic-infra.yml
-#         regexp: '^license_key: {{ newrelic_license_key }}'
-#         line: 'license_key: {{ newrelic_license_key }}'
-#         state: present
-
 - name: NewRelic | Add license key in the config file
   ansible.builtin.lineinfile:
-    path: /etc/newrelic-infra.yml
-    regexp: '^license_key='
-    line: 'license_key=98EB3EF710396C7003FF60EC6400D8203BE701845B67BF906D8422F18A3803A6'
+        path: /etc/newrelic-infra.yml
+        regexp: '^license_key: {{ newrelic_license_key }}'
+        line: 'license_key: {{ newrelic_license_key }}'
+        state: present
+
+# - name: NewRelic | Add license key in the config file
+#   ansible.builtin.lineinfile:
+#     path: /etc/newrelic-infra.yml
+#     regexp: '^license_key='
+#     line: 'license_key: 98EB3EF710396C7003FF60EC6400D8203BE701845B67BF906D8422F18A3803A6
+'
 
 
 # - name: NewRelic | Add GPG key to the apt sources keyring
