@@ -9,7 +9,7 @@
   ansible.builtin.lineinfile:
         path: /etc/newrelic-infra.yml
         regexp: '^license_key: {{ newrelic_license_key }}'
-        line: 'license_key: {{ ad7b45e406a60be7ad8a3c3705c8e98aee65NRAL }}'
+        line: 'license_key: ad7b45e406a60be7ad8a3c3705c8e98aee65NRAL'
         state: present
 
 
@@ -19,13 +19,14 @@
     state: present
 
 
+
 - name:  NewRelic repository into sources list
   ansible.builtin.apt_repository:
     repo: deb https://download.newrelic.com/infrastructure_agent/linux/apt hirsute main
     state: present
 
 
-- name: install  newrelic-infra
+- name: newrelic-infra
   apt:
     name: newrelic-infra
     state: present
