@@ -1,0 +1,10 @@
+- hosts: all
+  roles:
+    - name: newrelic.newrelic-infra
+      vars:
+        nrinfragent_os_name: ubuntu
+        nrinfragent_os_version: 20.04
+        nrinfragent_config:
+          license_key: ad7b45e406a60be7ad8a3c3705c8e98aee65NRAL
+          log_file: /var/log/newrelic/nr-infra.log
+          log_to_stdout: false
