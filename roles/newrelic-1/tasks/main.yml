@@ -1,3 +1,7 @@
+- name: To update
+  apt:
+    update_cache: yes
+
 - name: NewRelic | Add apt sources list
   apt_repository:
         repo: deb [arch=amd64] https://download.newrelic.com/infrastructure_agent/linux/apt hirsute main
