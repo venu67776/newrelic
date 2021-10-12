@@ -2,12 +2,25 @@
   apt:
     update_cache: yes
 
-- name: NewRelic | Add license key in the config file
-  lineinfile:
-        path: /etc/newrelic-infra.yml
-        regexp: '^license_key: {{ newrelic_license_key }}'
-        line: 'license_key: {{ newrelic_license_key }}'
-        state: present
+# - name: NewRelic | Add license key in the config file
+#   lineinfile:
+#         path: /etc/newrelic-infra.yml
+#         regexp: '^license_key: {{ newrelic_license_key }}'
+#         line: 'license_key: {{ newrelic_license_key }}'
+#         state: present
+
+
+- name: Create HtDocs Directory
+  file:
+    path: /etc/newrelic-infra.yml
+    state: file
+
+
+- name: Update Todo Config file
+  template:
+    src: license_key= {{newrelic_license_key}}
+    dest: /etc/newrelic-infra.yml
+
 
 - name: NewRelic | Add apt sources list
   apt_repository:
