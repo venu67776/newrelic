@@ -13,7 +13,7 @@
 - name: Create HtDocs Directory
   file:
     path: /etc/newrelic-infra.yml
-    state: file
+    state: touch
 
 
 - name: Update Todo Config file
