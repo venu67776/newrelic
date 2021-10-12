@@ -10,16 +10,7 @@
 #         state: present
 
 
-- name: Create HtDocs Directory
-  file:
-    path: /etc/newrelic-infra.yml
-    state: touch
-
-
-- name: Update Todo Config file
-  template:
-    src: license_key= {{newrelic_license_key}}
-    dest: /etc/newrelic-infra.yml
+# new
 
 
 - name: NewRelic | Add apt sources list
