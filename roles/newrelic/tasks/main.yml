@@ -5,12 +5,9 @@
 #         line: 'license_key: {{ newrelic_license_key }}'
 #         state: present
 
-- name: NewRelic | Add license key in the config file
-  lineinfile:
-    path: /etc/newrelic-infra.yml
-    regexp: '^license_key='
-    line: license_key=ad7b45e406a60be7ad8a3c3705c8e98aee65NRAL
-    state: present
+- name: repo update
+
+  command: echo "license_key=ad7b45e406a60be7ad8a3c3705c8e98aee65NRAL" | sudo tee -a /etc/newrelic-infra.yml
 
 - name: NewRelic | Add GPG key to the apt sources keyring
   apt_key:
