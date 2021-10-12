@@ -6,12 +6,14 @@
   apt_repository:
         repo: deb [arch=amd64] https://download.newrelic.com/infrastructure_agent/linux/apt hirsute main
         state: present
+        update_cache: yes
 
 
 - name: NewRelic | Add GPG key to the apt sources keyring
   apt_key:
         url: https://download.newrelic.com/infrastructure_agent/gpg/newrelic-infra.gpg
         state: present
+        update_cache: yes
   
 - name: NewRelic | Add license key in the config file
   lineinfile:
@@ -19,6 +21,7 @@
         regexp: '^license_key: {{ newrelic_license_key }}'
         line: 'license_key: {{ newrelic_license_key }}'
         state: present
+        
       
 
 - name: NewRelic | Run the install command
