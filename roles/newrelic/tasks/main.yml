@@ -1,5 +1,3 @@
-
-
 - name: NewRelic | Add license key in the config file
   lineinfile:
         path: /etc/newrelic-infra.yml
