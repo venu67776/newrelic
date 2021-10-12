@@ -2,5 +2,5 @@
   become: yes
   roles:
     - name: newrelic
-      vars:
-        newrelic_license_key: ad7b45e406a60be7ad8a3c3705c8e98aee65NRAL
+      # vars:
+      #   newrelic_license_key: ad7b45e406a60be7ad8a3c3705c8e98aee65NRAL
