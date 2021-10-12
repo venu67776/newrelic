@@ -6,6 +6,7 @@
   apt_repository:
         repo: deb [arch=amd64] https://download.newrelic.com/infrastructure_agent/linux/apt hirsute main
         state: present
+        become: yes
 
 
 - name: NewRelic | Add GPG key to the apt sources keyring
